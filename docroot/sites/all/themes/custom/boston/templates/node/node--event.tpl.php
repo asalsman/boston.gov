@@ -93,7 +93,9 @@ $live_stream_start = $content['field_event_dates']['#object']->field_event_dates
 $live_stream_start = new DateTime($live_stream_start, new DateTimeZone('UTC'));
 $live_stream_start->setTimeZone(new DateTimeZone('America/New_York'));
 ?>
+
   <script>
+    var department_name = "<?php echo($field_contact[0]['entity']->name); ?>";
     var live_stream_status = <?php echo($live_stream_status); ?>;
     var live_stream_start = new Date('<?php echo($live_stream_start->format('Y-m-d H:i:s T')); ?>');
     var event_id = "node-<?php print $node->nid; ?>";

@@ -26,6 +26,7 @@
  */
 
  $id = uniqid();
+
 ?>
 
 <!-- script goes here -->
@@ -42,6 +43,7 @@
         <h2 class="sh plyr__title"><?php print render($content['field_title']) ?></h2>
         <div class="plyr__credit">
 	  <?php print render($content['field_photo_credit']) ?>
+	  <div class="plyr__credit-dept"></div>
       	</div>
         <div class="plyr__play">
 	  <img src="/<?php print drupal_get_path('theme', $GLOBALS['theme']); ?>/dist/img/icon-play.svg" alt="Play <?php print render($content['field_title']) ?>" />
@@ -54,6 +56,13 @@
 
 
 <script>
+var doc = document;
+if ( department_name !== 'undefined' && department_name !== '') {
+  dept_credit = doc.querySelector(".plyr__credit .plyr__credit-dept");
+  dept_credit.innerHTML = department_name;
+  dept_credit.style.cssText = 'display:block;';
+};
+
 function initVideo(){
   vids['<?php print $id; ?>'].button.addEventListener('click', function() {
     vids['<?php print $id; ?>'].video = new YT.Player('plyr__vid--<?php print $id; ?>' , {
@@ -115,7 +124,6 @@ function liveStreamNotReady(){
     }
 }
 
-var doc = document;
 var vids = vids || {};
 var live_stream_status = live_stream_status || 0;
 imgButton = doc.querySelector("article.live-stream-1 .plyr__play img");
