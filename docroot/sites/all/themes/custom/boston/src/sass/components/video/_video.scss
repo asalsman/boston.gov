@@ -105,6 +105,10 @@
     margin-top: 5px;
   }
 
+  &__credit-dept {
+    display:none;
+  }
+
   &__button {
     padding: 0;
     background-color: transparent;
@@ -133,6 +137,11 @@
     img {
       height: 100%;
       width: 100%;
+    }
+
+    div {
+      font-style: italic;
+      display: none;
     }
   }
 

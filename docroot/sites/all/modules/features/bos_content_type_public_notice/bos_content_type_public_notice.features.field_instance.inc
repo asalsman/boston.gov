@@ -126,10 +126,10 @@ function bos_content_type_public_notice_field_default_field_instances() {
         'format_handlers' => array(
           'address' => 'address',
           'address-hide-country' => 'address-hide-country',
-          'organisation' => 'organisation',
           'name-oneline' => 'name-oneline',
           'address-hide-postal-code' => 0,
           'address-hide-street' => 0,
+          'organisation' => 0,
           'name-full' => 0,
           'address-optional' => 0,
         ),
@@ -427,9 +427,10 @@ function bos_content_type_public_notice_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'entityreference',
         'settings' => array(
-          'link' => FALSE,
+          'links' => 0,
+          'view_mode' => 'department_listing',
         ),
-        'type' => 'entityreference_label',
+        'type' => 'entityreference_entity_view',
         'weight' => 12,
       ),
       'listing' => array(
@@ -675,7 +676,7 @@ function bos_content_type_public_notice_field_default_field_instances() {
     'fences_wrapper' => 'no_wrapper',
     'field_name' => 'field_email',
     'label' => 'Contact Email',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'linkit' => array(
         'button_text' => 'Search',
@@ -924,7 +925,7 @@ function bos_content_type_public_notice_field_default_field_instances() {
         'weight' => 18,
       ),
       'listing' => array(
-        'label' => 'hidden',
+        'label' => 'above',
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
@@ -1119,6 +1120,50 @@ function bos_content_type_public_notice_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-public_notice-field_live_stream'.
+  $field_instances['node-public_notice-field_live_stream'] = array(
+    'bundle' => 'public_notice',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 20,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div_div_div',
+    'field_name' => 'field_live_stream',
+    'label' => 'Live Stream',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 20,
+    ),
+  );
+
   // Exported field_instance: 'node-public_notice-field_multiple_neighborhoods'.
   $field_instances['node-public_notice-field_multiple_neighborhoods'] = array(
     'bundle' => 'public_notice',
@@ -1216,7 +1261,7 @@ function bos_content_type_public_notice_field_default_field_instances() {
     'fences_wrapper' => 'no_wrapper',
     'field_name' => 'field_phone_number',
     'label' => 'Contact Phone Number',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'linkit' => array(
         'button_text' => 'Search',
@@ -1347,6 +1392,12 @@ function bos_content_type_public_notice_field_default_field_instances() {
         'type' => 'date_default',
         'weight' => 20,
       ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'node',
     'fences_wrapper' => 'no_wrapper',
@@ -1459,7 +1510,7 @@ function bos_content_type_public_notice_field_default_field_instances() {
         'weight' => 19,
       ),
       'listing' => array(
-        'label' => 'hidden',
+        'label' => 'above',
         'module' => 'date',
         'settings' => array(
           'format_type' => 'long',
@@ -1505,7 +1556,7 @@ function bos_content_type_public_notice_field_default_field_instances() {
         'text_parts' => array(),
         'year_range' => '-3:+3',
       ),
-      'type' => 'date_text',
+      'type' => 'date_popup',
       'weight' => 18,
     ),
   );
@@ -1545,6 +1596,12 @@ function bos_content_type_public_notice_field_default_field_instances() {
         ),
         'type' => 'date_default',
         'weight' => 21,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
@@ -1596,6 +1653,7 @@ function bos_content_type_public_notice_field_default_field_instances() {
   t('If this notice is cancelled, enter a reason.');
   t('Intro Text');
   t('Is there public testimony?');
+  t('Live Stream');
   t('Location');
   t('Please attach filed posting here.');
   t('Point of Contact');
