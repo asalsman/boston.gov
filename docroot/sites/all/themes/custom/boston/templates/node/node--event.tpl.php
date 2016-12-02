@@ -82,6 +82,9 @@
 hide($content['comments']);
 hide($content['links']);
 ?>
+  <script>
+    var event_id = "node-<?php print $node->nid; ?>";
+  </script>
   <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix desktop-100"<?php print $attributes; ?>>
   <?php if (isset($content['field_updated_date'])): ?>
     <div class="breadcrumb-last-updated">
@@ -108,7 +111,9 @@ hide($content['links']);
     <div class="column sidebar mobile-100 desktop-33-right">
       <!-- DATE OUTPUT PLACEHOLDER -->
       <div class="event-date-wrapper">
-        <div class="event-date sidebar-header"><?php print render($content['field_event_dates']); ?></div>
+        <div class="event-date sidebar-header">
+	  <?php print render($event_date_canonical); ?>
+	</div>
       </div>
       <div class="list-item event-time-wrapper">
         <?php

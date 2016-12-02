@@ -28,6 +28,7 @@ features[ctools][] = strongarm:strongarm:1
 features[features_api][] = api:2
 features[field_base][] = field_event_dates
 features[field_base][] = field_fake_date
+features[field_base][] = field_live_stream
 features[field_group][] = group_components|node|event|form
 features[field_group][] = group_event_basic_info|node|event|form
 features[field_group][] = group_event_dates|node|event|form
