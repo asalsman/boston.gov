@@ -127,7 +127,6 @@ liveStreamTxt = doc.querySelector("article .plyr__play div");
 playerElement = doc.querySelector("article .plyr__play");
 vids['<?php print $id; ?>'] = { button: document.getElementById("plyr__<?php print $id; ?>") };
 
-
 if (live_stream_status == 1) {
   var live_stream_start = new Date('<?php echo($live_stream_start->format('Y-m-d H:i:s T')); ?>');
   var isLiveStreamStart = live_stream_start.getTime();
