@@ -109,7 +109,6 @@ function getTimeRemaining(endtime){
 }
 
 function liveStreamNotReady(){
-    event_listing = doc.getElementById(event_id);
     playas = doc.getElementsByClassName('plyr__play');
     n = playas.length;
     imgButton.style.cssText = "display: none;"
