@@ -76,14 +76,15 @@ function bos_view_news_announcements_views_default_views() {
   $handler = $view->new_display('block', 'Departments', 'departments');
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Entity Reference: Referenced Entity */
-  $handler->display->display_options['relationships']['field_contact_target_id']['id'] = 'field_contact_target_id';
-  $handler->display->display_options['relationships']['field_contact_target_id']['table'] = 'field_data_field_contact';
-  $handler->display->display_options['relationships']['field_contact_target_id']['field'] = 'field_contact_target_id';
+  $handler->display->display_options['relationships']['field_contacts_target_id']['id'] = 'field_contacts_target_id';
+  $handler->display->display_options['relationships']['field_contacts_target_id']['table'] = 'field_data_field_contacts';
+  $handler->display->display_options['relationships']['field_contacts_target_id']['field'] = 'field_contacts_target_id';
+  $handler->display->display_options['relationships']['field_contacts_target_id']['required'] = TRUE;
   /* Relationship: Entity Reference: Referenced Entity */
   $handler->display->display_options['relationships']['field_department_profile_target_id']['id'] = 'field_department_profile_target_id';
   $handler->display->display_options['relationships']['field_department_profile_target_id']['table'] = 'field_data_field_department_profile';
   $handler->display->display_options['relationships']['field_department_profile_target_id']['field'] = 'field_department_profile_target_id';
-  $handler->display->display_options['relationships']['field_department_profile_target_id']['relationship'] = 'field_contact_target_id';
+  $handler->display->display_options['relationships']['field_department_profile_target_id']['relationship'] = 'field_contacts_target_id';
   $handler->display->display_options['relationships']['field_department_profile_target_id']['required'] = TRUE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Content: Published Date (field_published_date) */
