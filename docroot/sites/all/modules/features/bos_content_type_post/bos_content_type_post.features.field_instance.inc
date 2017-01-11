@@ -534,7 +534,7 @@ function bos_content_type_post_field_default_field_instances() {
     'fences_wrapper' => 'no_wrapper',
     'field_name' => 'field_contacts',
     'label' => 'All related departments',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'behaviors' => array(
         'taxonomy-index' => array(
